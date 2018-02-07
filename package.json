@@ -1,0 +1,27 @@
+{
+  "name": "weibo-base62",
+  "version": "0.0.1",
+  "description": "encode and decode Weibo mid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uoiszero/weibo-base62.git"
+  },
+  "keywords": [
+    "weibo",
+    "mid",
+    "base62"
+  ],
+  "author": "Alex Yue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uoiszero/weibo-base62/issues"
+  },
+  "homepage": "https://github.com/uoiszero/weibo-base62#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
