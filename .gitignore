@@ -53,3 +53,5 @@ fabric.properties
 
 .gitignore
 .idea/
+.vscode
+node_modules/
