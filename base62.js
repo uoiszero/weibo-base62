@@ -1,9 +1,9 @@
-const _ = require("lodash")
-  , characterSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  , characterDict = _.zipObject(characterSet.split(""), _.range(62));
+const _ = require("lodash"),
+  characterSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  characterDict = _.zipObject(characterSet.split(""), _.range(62));
 
-exports.from = fromBase62;
-exports.to = toBase62;
+exports.fromBase62 = fromBase62;
+exports.toBase62 = toBase62;
 
 /**
  * mid转base62
@@ -11,6 +11,9 @@ exports.to = toBase62;
  * @returns {string}
  */
 function toBase62(mid) {
+  if (!mid) {
+    return "";
+  }
   let slices = [];
   let pad = "0000000";
   mid = pad.substring(0, pad.length - (mid.length % 7)) + mid;
@@ -43,6 +46,9 @@ function toBase62(mid) {
  * @param str
  */
 function fromBase62(str) {
+  if (!str) {
+    return "";
+  }
   let slices = _.chunk(str.split("").reverse(), 4).reverse();
   let mid = "";
   _.each(slices, function (item) {
