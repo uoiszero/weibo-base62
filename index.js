@@ -1,4 +1,4 @@
 const base62 = require("./base62");
 
-exports.to = base62.to;
-exports.from = base62.from;
+exports.encode = base62.encode;
+exports.decode = base62.decode;

@@ -2,15 +2,15 @@ const _ = require("lodash"),
   characterSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
   characterDict = _.zipObject(characterSet.split(""), _.range(62));
 
-exports.fromBase62 = fromBase62;
-exports.toBase62 = toBase62;
+exports.decode = decode;
+exports.encode = encode;
 
 /**
  * mid转base62
  * @param mid
  * @returns {string}
  */
-function toBase62(mid) {
+function encode(mid) {
   if (!mid) {
     return "";
   }
@@ -45,7 +45,7 @@ function toBase62(mid) {
  * base62转mid
  * @param str
  */
-function fromBase62(str) {
+function decode(str) {
   if (!str) {
     return "";
   }
