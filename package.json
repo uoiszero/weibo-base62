@@ -1,6 +1,6 @@
 {
   "name": "weibo-base62",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "encode and decode Weibo mid",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/uoiszero/weibo-base62#readme",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.15"
   }
 }
