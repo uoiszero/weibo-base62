@@ -1,12 +1,15 @@
-const _ = require("lodash"),
-  characterSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  characterDict = _.zipObject(characterSet.split(""), _.range(62));
+const characterSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  characterDict = {};
+
+characterSet.split("").forEach((val, index) => {
+  characterDict[val] = index;
+})
 
 exports.decode = decode;
 exports.encode = encode;
 
 /**
- * mid转base62
+ * mid to base62
  * @param mid
  * @returns {string}
  */
@@ -36,31 +39,40 @@ function encode(mid) {
       num = (num - remain) / 62;
     }
 
-    arr.push(_.padStart(s, 4, "0"));
+    arr.push(s.padStart(4, "0"));
   }
-  return _.trimStart(arr.reverse().join(""), "0");
+  return arr.reverse().join("").replace(/^0+/g, "");
 }
 
 /**
- * base62转mid
+ * base62 to mid
  * @param str
  */
 function decode(str) {
   if (!str) {
     return "";
   }
-  let slices = _.chunk(str.split("").reverse(), 4).reverse();
+  let slices = chunk(str.split("").reverse(), 4).reverse();
   let mid = "";
-  _.each(slices, function (item) {
+  slices.forEach(function (item) {
     let num = 0;
-    _.each(item.reverse(), function (obj) {
+    item.reverse().forEach(function (obj) {
       let val = characterDict[obj];
       num = num * 62 + val;
     });
     let str = num.toString();
-    str = _.repeat("0", 7 - str.length) + str;
+    str = "0".repeat(7 - str.length) + str;
     mid += str;
   });
   mid = mid.replace(/^0+/, "");
   return mid;
+}
+
+function chunk(arr, size) {
+  let len = arr.length;
+  let temp = [];
+  for (let i = 0; i < len; i += size) {
+    temp.push(arr.slice(i, i + size));
+  }
+  return temp;
 }
