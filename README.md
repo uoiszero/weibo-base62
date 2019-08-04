@@ -2,6 +2,8 @@
 
 # Sina Weibo base62 encode and decode
 
+[![NPM](https://nodei.co/npm/weibo-base62.png)](https://www.npmjs.com/package/weibo-base62)
+
 ## 使用方法
 
 ## How to use
