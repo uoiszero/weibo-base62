@@ -41,7 +41,7 @@ function encode(mid) {
 
     arr.push(s.padStart(4, "0"));
   }
-  return arr.reverse().join("").replace(/^0+/g, "");
+  return arr.reverse().join("").replace(/^0+/, "");
 }
 
 /**
