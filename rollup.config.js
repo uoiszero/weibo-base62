@@ -9,7 +9,7 @@ import filesize from "rollup-plugin-filesize";
 export default {
   input: "./index.js",
   output: {
-    dir: './lib',
+    dir: './dist',
     sourcemap: true,
     file: pkg.module,
     format: 'umd'
