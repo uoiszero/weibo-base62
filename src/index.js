@@ -138,7 +138,7 @@ function chunk(arr, size) {
   );
 }
 
-module.exports = {
+export {
   encode,
   decode,
   chunk // 导出chunk函数以便测试

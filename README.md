@@ -8,23 +8,46 @@
 
 ## How to use
 
+### ESM (推荐)
 ```javascript
-const base62 = require("weibo-base62");
+import { encode, decode } from "weibo-base62";
 
 const mid = "4397951453070808";
 const code = "HF6adcSRa";
 
-//result: HF6adcSRa
-console.log("base62: ", base62.encode(mid));
+// result: HF6adcSRa
+console.log("base62: ", encode(mid));
 
-//result: 4397951453070808
-console.log("mid: ", base62.decode(code));
+// result: 4397951453070808
+console.log("mid: ", decode(code));
+```
+
+### CommonJS
+```javascript
+const { encode, decode } = require("weibo-base62");
+
+const mid = "4397951453070808";
+const code = "HF6adcSRa";
+
+// result: HF6adcSRa
+console.log("base62: ", encode(mid));
+
+// result: 4397951453070808
+console.log("mid: ", decode(code));
 ```
 
 ## 测试
 
 ## Test
 
-```javascript
-yarn test
+```bash
+npm test
+```
+
+## 构建
+
+## Build
+
+```bash
+npm run build
 ```

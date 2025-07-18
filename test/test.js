@@ -2,11 +2,8 @@
  * weibo-base62 测试文件
  * 测试微博mid和base62编码之间的转换功能
  */
-const { decode, encode } = require("../lib/index.js");
-// 导入内部函数进行测试
-const index = require("../lib/index.js");
-const chunk = index.chunk; // 假设chunk函数已经导出
-const should = require("should");
+import { decode, encode, chunk } from "../src/index.js";
+import should from "should";
 
 describe("weibo-base62 测试", () => {
   // 基本功能测试组
