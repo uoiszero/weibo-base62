@@ -1,6 +1,6 @@
 {
   "name": "weibo-base62",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "encode and decode Weibo mid",
   "type": "module",
   "exports": {
@@ -12,7 +12,7 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node --test test/index.test.js",
     "build": "rslib build",
     "dev": "rslib build --watch"
   },
@@ -36,8 +36,6 @@
   "homepage": "https://github.com/uoiszero/weibo-base62#readme",
   "dependencies": {},
   "devDependencies": {
-    "@rslib/core": "^0.10.6",
-    "mocha": "^10.2.0",
-    "should": "^13.2.3"
+    "@rslib/core": "^0.10.6"
   }
 }
